@@ -25,6 +25,7 @@ class BetsController < ApplicationController
   # POST /bets.json
   def create
     @bet = Bet.new(bet_params)
+    @bet.user_id = current_user.id
 
     respond_to do |format|
       if @bet.save
