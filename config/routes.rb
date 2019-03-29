@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :payouts
+  resources :bets
   resources :events
   resources :team_matches
   resources :matches

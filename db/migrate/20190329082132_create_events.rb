@@ -3,7 +3,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
     create_table :events do |t|
       t.integer :match_id
       t.string :title
-      t.datatime, :start_time
+      t.datetime :start_time
       t.datetime :end_time
       t.float :commission
       t.boolean :status

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @payout.user_id %>
+</p>
+
+<p>
+  <strong>Match:</strong>
+  <%= @payout.match_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @payout.amount %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @payout.type %>
+</p>
+
+<%= link_to 'Edit', edit_payout_path(@payout) %> |
+<%= link_to 'Back', payouts_path %>
