@@ -1,12 +1,13 @@
 <h1>Matches</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Start time</th>
       <th>End time</th>
       <th>Venue</th>
       <th>Completed</th>
+      <th>Winner</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= match.end_time %></td>
         <td><%= match.venue %></td>
         <td><%= match.completed %></td>
+        <td><%= match.match_winner.team.name %></td>
         <td><%= link_to 'Show', match %></td>
         <td><%= link_to 'Edit', edit_match_path(match) %></td>
         <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>

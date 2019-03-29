@@ -40,8 +40,10 @@ class MatchesController < ApplicationController
   # PATCH/PUT /matches/1
   # PATCH/PUT /matches/1.json
   def update
+    binding.pry
     respond_to do |format|
       if @match.update(match_params)
+        @match.winner_update if eval(params[:match][:completed]) == 1
         format.html { redirect_to @match, notice: 'Match was successfully updated.' }
         format.json { render :show, status: :ok, location: @match }
       else
