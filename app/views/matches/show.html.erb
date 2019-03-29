@@ -1,0 +1,22 @@
+<p>
+  <strong>Start time:</strong>
+  <%= @match.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @match.end_time %>
+</p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @match.venue %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @match.completed %>
+</p>
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>

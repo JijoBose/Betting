@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :matches
   resources :teams
   devise_for :users, :controllers => { registrations: 'registrations' }
   root 'welcome#index'
