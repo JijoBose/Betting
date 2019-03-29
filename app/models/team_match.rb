@@ -1,4 +1,6 @@
 class TeamMatch < ApplicationRecord
+  belongs_to :team
+  belongs_to :match
   validates :team_id, :match_id, presence: true
   validates :team_id, uniqueness: { scope: :match_id,
       message: "team already added for this match" }

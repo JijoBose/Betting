@@ -20,8 +20,8 @@
       <tr>
         <td><%= event.match_id %></td>
         <td><%= event.title %></td>
-        <td><%= event.start_time %></td>
-        <td><%= event.end_time %></td>
+        <td><%= event.start_time.strftime("%m/%d/%Y at %I:%M%p") %></td>
+        <td><%= event.end_time.strftime("%m/%d/%Y at %I:%M%p") %></td>
         <td><%= event.commission %></td>
         <td><%= event.status %></td>
         <td><%= link_to 'Show', event %></td>

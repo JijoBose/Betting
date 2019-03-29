@@ -6,6 +6,8 @@
   <div class="form-inputs">
     <%= f.input :event_id, :collection => Event.all.pluck(:id, :title),
       label_method: :second, value_method: :first, prompt: "Select Event", class: "custom-select" %>
+    <%= f.input :team_id, :collection => Team.all.pluck(:id, :name),
+      label_method: :second, value_method: :first, prompt: "Select Team", class: "custom-select" %>
     <%= f.input :amount %>
   </div>
 
