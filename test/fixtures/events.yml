@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  match_id: 1
+  title: MyString
+  start_time: 
+  end_time: 2019-03-29 13:51:32
+  commission: 1.5
+  status: false
+
+two:
+  match_id: 1
+  title: MyString
+  start_time: 
+  end_time: 2019-03-29 13:51:32
+  commission: 1.5
+  status: false
