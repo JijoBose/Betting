@@ -8,8 +8,10 @@ class Ability
     if user.role == "admin"
       can :manage, :all
     else
+      can :read, Bet
       can :create, Bet
       can :read, Match
+      can :read, Event
     end
     #
     # The first argument to `can` is the action you are giving the user

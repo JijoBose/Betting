@@ -1,5 +1,6 @@
 class BetsController < ApplicationController
   before_action :set_bet, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /bets
   # GET /bets.json

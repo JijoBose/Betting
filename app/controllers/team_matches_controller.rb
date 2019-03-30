@@ -1,5 +1,6 @@
 class TeamMatchesController < ApplicationController
   before_action :set_team_match, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /team_matches
   # GET /team_matches.json
