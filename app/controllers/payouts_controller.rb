@@ -69,6 +69,6 @@ class PayoutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def payout_params
-      params.require(:payout).permit(:user_id, :match_id, :amount, :type)
+      params.require(:payout).permit(:user_id, :event_id, :amount, :txn)
     end
 end

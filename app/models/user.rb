@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   ROLES = %i[admin player]
+  has_many :payouts
+  has_many :bets
 end

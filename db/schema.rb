@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2019_03_29_105536) do
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "team_id"
     t.boolean "vote"
   end
 
@@ -58,9 +57,9 @@ ActiveRecord::Schema.define(version: 2019_03_29_105536) do
 
   create_table "payouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "match_id"
+    t.integer "event_id"
     t.float "amount"
-    t.string "type"
+    t.string "txn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
