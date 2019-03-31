@@ -16,6 +16,8 @@ class MatchesController < ApplicationController
   # GET /matches/new
   def new
     @match = Match.new
+    # @match.teams.build
+    # @match.team_matches.build
   end
 
   # GET /matches/1/edit
@@ -72,6 +74,6 @@ class MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:start_time, :end_time, :venue, :completed)
+      params.require(:match).permit(:start_time, :end_time, :venue, :completed, team_matches_attributes: [:team_id, :match_id, :score, :_destroy])
     end
 end

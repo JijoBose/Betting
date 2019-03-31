@@ -4,6 +4,7 @@ class Match < ApplicationRecord
   has_one :match_winner
   has_many :teams, through: :team_matches
   validates :start_time, :end_time, :venue, presence: true
+  accepts_nested_attributes_for :team_matches
 
 
   def winner_update

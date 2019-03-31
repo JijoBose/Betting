@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'cancancan', '~> 2.3'
+gem "nested_form"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

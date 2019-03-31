@@ -1,5 +1,4 @@
-
-<%= simple_form_for(@match) do |f| %>
+<%= simple_nested_form_for(@match) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -8,6 +7,26 @@
     <%= f.input :end_time %>
     <%= f.input :venue %>
     <%= f.input :completed %>
+  </div>
+  <div id="team_match">
+    <%= f.simple_fields_for :team_matches do |tm| %>
+      <div class="col-md-11 col-sm-11">
+        <%= tm.input :team_id, :collection => Team.all.pluck(:id, :name),
+          label_method: :second, value_method: :first, 
+          prompt: "Select Team", class: "custom-select" %>
+        <%#= tm.input :match_id, as: :hidden, value: params[:movie][:title] %>
+        <%= tm.input :score %>
+      </div>
+      <div class="col-md-1 col-sm-1">
+        <%= tm.link_to_remove "X", class: "btn btn-sm btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <%= f.link_to_add :team_matches, :data => { :target => "#team_match"} do %>
+      <h4> <i class="fa fa-plus"></i> Add Team </h4>
+    <% end %>
   </div>
 
   <div class="form-actions">
