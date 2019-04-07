@@ -1,5 +1,6 @@
 class BetsController < ApplicationController
   before_action :set_bet, only: [:show, :edit, :update, :destroy]
+  before_action :check_bet_status, only: [:create, :update]
   load_and_authorize_resource
 
   # GET /bets
@@ -67,6 +68,11 @@ class BetsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_bet
       @bet = Bet.find(params[:id])
+    end
+
+    def check_bet_status
+      event = Event.find(params[:bet][:event_id])
+      return redirect_to bets_url, alert: 'Betting Time Ended' if event.end_time < DateTime.now
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

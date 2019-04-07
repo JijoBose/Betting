@@ -1,3 +1,12 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
 
+<p>Total revenue: <%= @total_rev %></p>
+
+<% @highest_bet.each do |bet| %>
+  <p><%= bet.user.email %> <%= bet.amount %></p>
+<% end %>
+
+<% @high_rev.each do |highRev| %>
+  <p><%= highRev.event.title %>: <%= highRev.amount %></p>
+<% end %>
